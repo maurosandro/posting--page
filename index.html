@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Post - Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <h1>📝 Meu Blog</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#criar">Criar Post</a></li>
+                <li><a href="#posts">Meus Posts</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Seção de Criação de Post -->
+        <section id="criar-post">
+            <div class="container">
+                <h2>Criar Novo Post</h2>
+                <p class="subtitulo">Compartilhe suas ideias com o mundo!</p>
+
+                <form id="form-post">
+                    <div class="form-group">
+                        <label for="titulo-post">Título do Post</label>
+                        <input 
+                            type="text" 
+                            id="titulo-post" 
+                            name="titulo"
+                            placeholder="Digite o título do seu post..."
+                            required
+                            aria-label="Campo para título do post"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="conteudo-post">Conteúdo</label>
+                        <textarea 
+                            id="conteudo-post" 
+                            name="conteudo"
+                            rows="8"
+                            placeholder="Escreva o conteúdo do seu post..."
+                            required
+                            aria-label="Campo para conteúdo do post"
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-publicar">
+                        Publicar Post
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Seção de Renderização do Post -->
+        <section id="post-renderizado">
+            <div class="container">
+                <article class="post-card" id="card-post" style="display: none;">
+                    <header class="post-header">
+                        <h2 id="renderizador-titulo"></h2>
+                        <div class="post-meta">
+                            <span class="autor">
+                                <img src="https://cdn-icons-png.flaticon.com/128/1077/1077114.png" width="18" height="18" alt="Ícone usuário" style="vertical-align: middle; margin-right: 5px;">
+                                Usuário ID: 1
+                            </span>
+                            <span class="data" id="data-post"></span>
+                        </div>
+                    </header>
+                    <div class="post-content">
+                        <p id="renderizador-conteudo"></p>
+                    </div>
+                    <footer class="post-footer">
+                        <button class="btn-acao">
+                            <img src="https://cdn-icons-png.flaticon.com/128/4926/4926585.png" width="23" height="23" alt="Curtir">
+                            <span>Curtir</span>
+                        </button>
+                        <button class="btn-acao">
+                            <img src="https://cdn-icons-png.flaticon.com/128/11730/11730149.png" width="23" height="23" alt="Comentar">
+                            <span>Comentar</span>
+                        </button>
+                        <button class="btn-acao">
+                            <img src="https://cdn-icons-png.flaticon.com/128/2099/2099122.png" width="23" height="23" alt="Compartilhar">
+                            <span>Compartilhar</span>
+                        </button>
+                    </footer>
+                </article>
+
+                <!-- Mensagem de Loading -->
+                <div id="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Publicando seu post...</p>
+                </div>
+
+                <!-- Mensagem de Sucesso -->
+                <div id="mensagem-sucesso" style="display: none;">
+                    <div class="alerta-sucesso">
+                        ✅ Post publicado com sucesso!
+                    </div>
+                </div>
+
+                <!-- Mensagem de Erro -->
+                <div id="mensagem-erro" style="display: none;">
+                    <div class="alerta-erro">
+                        ❌ Erro ao publicar o post. Tente novamente.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Meu Blog - Todos os direitos reservados</p>
+            <p>Conectando pessoas através de histórias</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
